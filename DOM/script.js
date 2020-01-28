@@ -48,16 +48,31 @@ document.addEventListener('DOMContentLoaded', function () {
     paragraph.appendChild(text);
 
     paragraph.onclick = function () {
-        paragraph.style.color = 'red';
-    }
+        //paragraph.style.color = 'red';
+        paragraph.style.color = getColor();
+    };
 
+    //5. add a button and an empty div - when button clicked, add span that contains your name to empty div
+    let btn2 = document.createElement('button');
+    document.body.appendChild(btn2);
+    let btn2Text = document.createTextNode('Add name span to empty div');
+    btn2.appendChild(btn2Text);
+
+    btn2.onclick = function () {
+        let name = document.createElement("Lexi");
+        let lexi = document.createTextNode("Lexi ")
+        name.appendChild(lexi);
+        document.body.appendChild(name);
+    };
+
+    //6. Create a button and a ul in HTML; JS - creat an array containing names of 10 friends; when button clicked, add each friends name as an li on to the ul
+    
 
 
 });
 
-//random color background
-// let color = ['red', 'green', 'blue', 'yellow', 'orange', 'purple', 'pink', 'brown']
-// function getColor() {
-//     let randomColor = [Math.floor(Math.random() * color.length)];
-//     return randomColor;
-// };
+//4. random color background function
+function getColor() {
+    let randomColor = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
+    return randomColor;
+};
